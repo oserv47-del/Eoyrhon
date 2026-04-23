@@ -1,17 +1,26 @@
 [app]
-title = MyPythonApp
-package.name = mypythonapp
-package.domain = org.test
+# App ka naam jo phone me dikhega
+title = BGMI Popularity Store
+package.name = bgmistore
+package.domain = org.store
+
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
-version = 0.1
-requirements = python3,kivy==2.3.0,kivymd==1.2.0,pillow
+version = 1.0
+
+# SABSE IMPORTANT: requests (Telegram ke liye) aur pyjnius (UPI ke liye) add kiya gaya hai
+requirements = python3,kivy==2.3.0,kivymd==1.2.0,pillow,requests,pyjnius
+
 orientation = portrait
 osx.python_version = 3
 osx.kivy_version = 1.9.1
 fullscreen = 0
 android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
+
+# PERMISSIONS: Internet ke bina Telegram message nahi jayega
+android.permissions = INTERNET
+
 android.api = 33
 android.minapi = 21
 android.ndk = 25b
